@@ -70,6 +70,7 @@ function generateQuote() {
 	if (isAlternating == true) {
 		document.getElementById("quote").innerHTML = '"' + dataOne.quote + '"';
 		document.getElementById("author").innerHTML = '- ' + dataOne.author;
+		document.getElementById("twitter").setAttribute("href", "https://twitter.com/intent/tweet?text=\""+dataOne.quote+"\" -"+dataOne.author);
 		quoteLoad().then(function (response) {
 			dataOne = test;
 		});
@@ -77,6 +78,7 @@ function generateQuote() {
 	} else if (!isAlternating) {
 		document.getElementById("quote").innerHTML = '"' + dataTwo.quote + '"';
 		document.getElementById("author").innerHTML = '- ' + dataTwo.author;
+		document.getElementById("twitter").setAttribute("href", "https://twitter.com/intent/tweet?text=\""+dataTwo.quote+"\" -"+dataTwo.author);
 		quoteLoad().then(function (response) {
 			dataTwo = test;
 		});
