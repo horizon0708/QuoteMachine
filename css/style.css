@@ -1,7 +1,9 @@
 .center {
-  text-align: center; }
+  text-align: center;
+  color: white; }
 
 .box {
+  border: none;
   text-align: center;
   border-radius: 10px;
   background-color: white; }
@@ -11,10 +13,23 @@
 
 .button {
   background-color: #ff8080;
-  border-color: #ff8080;
+  border: none;
   color: white; }
+
+.twitter {
+  display: inline-block;
+  color: white;
+  font-size: 40px;
+  padding: 30 0; }
 
 .color-change {
   color: white; }
+
+.main-text {
+  margin: 50px 50px 0px 50px; }
+
+.author-text {
+  margin: 0px 50px 50px 0px;
+  text-align: right; }
 
 /*# sourceMappingURL=style.css.map */

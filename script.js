@@ -40,10 +40,14 @@ function InitialiseHue() {
 
 
 function fadeColor() {
-	nextHue = Math.floor(Math.random() * 359); // Generates H value of hsl;
+	nextHue = currentHue + 30; // Generates H value of hsl;
+	if (nextHue > 359){
+		nextHue = nextHue - 359;
+	}
+	
 	var d = 1000;
 
-	if (nextHue > currentHue) {
+	
 		var changeValue = Math.abs(nextHue - currentHue) / 1000; //makes all transitions last the same.
 		
 		for (var i = currentHue; i <= nextHue; i = i + changeValue) {
@@ -55,17 +59,7 @@ function fadeColor() {
 				}, dd)
 			})(i, d);
 		}
-	} else {
-		for (var i = currentHue; i >= nextHue; i = i - changeValue) {
-			d += 1;
-			(function (ii, dd) {
-				setTimeout(function () {
-					$('.background').css("background-color", "hsl(" + ii + ",50%,75%");
-					$('.color-change').css("color", "hsl(" + ii + ",50%,75%");
-				}, dd)
-			})(i, d);
-		}
-	}
+	
 
 	currentHue = nextHue;
 }
@@ -93,6 +87,9 @@ function generateQuote() {
 // https://github.com/mdn/js-examples/blob/master/promises-test/index.html
 
 //http://api.jquery.com/jquery.ajax/
+//https://codepen.io/quasimondo/pen/lDdrF 
+// this is cool, I wanna implement this sometime
+
 function quoteLoad() {
 	return new Promise((resolve, reject) => {
 
@@ -109,7 +106,9 @@ function quoteLoad() {
 			error: function (err) {
 				alert(err);
 			},
-			async: true, // this was the issue, the api data loaded AFTER the script had executed - seems depreciated, perhaps there is another way to wait for async data to load?
+			async: true, 
+			// async being true was an issue, the api data loaded AFTER the script had executed
+			// setting it to false was a fix, but was not recommended; thus had to look at promise and .then() function.
 			beforeSend: function (xhr) {
 				xhr.setRequestHeader("X-Mashape-Authorization", "dZr0xRJy5MmshBFjcOpyDJx2OyN6p1oxiA3jsnkr4jiyriucuP"); // Enter here your Mashape key
 			}
