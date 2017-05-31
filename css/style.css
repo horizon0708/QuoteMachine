@@ -2,12 +2,19 @@
   text-align: center; }
 
 .box {
-  border: 2px solid #1EAEDB;
   text-align: center;
   border-radius: 10px;
   background-color: white; }
 
 .background {
   background-color: #1EAEDB; }
+
+.button {
+  background-color: #ff8080;
+  border-color: #ff8080;
+  color: white; }
+
+.color-change {
+  color: white; }
 
 /*# sourceMappingURL=style.css.map */
