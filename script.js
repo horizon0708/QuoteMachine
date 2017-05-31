@@ -48,7 +48,7 @@ function fadeColor() {
 	var d = 1000;
 
 	
-		var changeValue = Math.abs(nextHue - currentHue) / 1000; //makes all transitions last the same.
+		var changeValue = Math.abs(nextHue - currentHue) / 400; //makes all transitions last the same.
 		
 		for (var i = currentHue; i <= nextHue; i = i + changeValue) {
 			d += 1;

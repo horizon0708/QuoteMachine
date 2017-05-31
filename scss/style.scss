@@ -6,6 +6,16 @@ $color-primary: hsl(0,100%,75%);
     color: white;
 }
 
+.header{
+    color: white;
+    font-family:"HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-bottom: 0.2rem;
+    border: 2px solid green;
+    display: table-cell;
+    vertical-align: bottom;
+    font-size: 30px;
+}
+
 .box {
     border: none;
     text-align: center;
